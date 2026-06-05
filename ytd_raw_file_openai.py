@@ -109,7 +109,7 @@ def ytd_this_year(data_file_name, month_day, title_date):
                 ],
             }
         ],
-        max_tokens=3000,
+        max_tokens=15000,
     )
 
     ai_analysis_string = response.choices[0].message.content
@@ -157,7 +157,7 @@ def save_as_pdf(html_content):
 
         # Save as a professional PDF
         page.pdf(
-            path="Market_Analysis_Report.pdf",
+            path=r"C:\Users\Marc\Downloads\Market_Analysis_Report.pdf",
             format="A4",
             print_background=True,  # Ensures your colors and charts show up
             margin={"top": "20mm", "bottom": "20mm", "left": "20mm", "right": "20mm"}
@@ -176,5 +176,5 @@ if __name__ == '__main__':
     date_4_title = f"{sunday.strftime('%B')} {get_ordinal(sunday.day)}"
     # print(f"Variable value: {month_day_input}")
     # print(f"Report title:   {date_4_title}")
-    ytd_this_year('SuperControlDataV2.xlsx', month_day_input, date_4_title)
+    ytd_this_year(r'C:\Users\Marc\PycharmProjects\PeakVenuesAccounts\files\SuperControlDataV2.xlsx', month_day_input, date_4_title)
     # chat_with_gpt()
